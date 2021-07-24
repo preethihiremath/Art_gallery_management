@@ -36,7 +36,7 @@
                             </div>
                             <button class="button1 " name="login" type="submit">Login</button>
                             <br />
-                            <div class="mt-1"><h6>Don't have an account ?<a class="link" href="register.html">  Register Now</a></h6></div>
+                            <div class="mt-1"><h6>Don't have an account ?<a class="link" href="register.php">  Register Now</a></h6></div>
                         </form>
                       </div>
                   </div>

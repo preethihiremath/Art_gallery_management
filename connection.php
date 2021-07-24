@@ -32,15 +32,15 @@ $conn = mysqli_connect('localhost','root','','artgallery');
             array_push($errors,"Password doesnt match ");
         }
 
-        if($password <=6){
+        if(strlen($password)<=6){
             array_push($errors,"Weak password");
         }
         if(count($errors) ==0){
             $password =md5($password);
-            $customer= "INSERT INTO customer(name, phno, age, gender, address, email) VALUES ('$name','$phno','$age','$gender','$address','$email')";
-            $customer_login="INSERT INTO customer_login (email,password) VALUES('$email','$password')"; 
-            mysqli_query($conn,$customer);
-            mysqli_query($conn,$customer_login);
+            $sql1= "INSERT INTO customer VALUES (NULL,'$name','$phno','$age','$gender','$address','$email')";
+            $sql2="INSERT INTO customer_login  VALUES('$email','$password')"; 
+            mysqli_query($conn,$sql1);
+            mysqli_query($conn,$sql2);
             header("location: login.php");
         }
     }
