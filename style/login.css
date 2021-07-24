@@ -56,3 +56,10 @@ section{
     width: 90vh;
     height: 90vh;
 }
+.errors {
+    margin:auto;
+    border: 1px solid red;
+    background-color: #a94442;
+    border-radius: 5px;
+    text-align: center;
+}

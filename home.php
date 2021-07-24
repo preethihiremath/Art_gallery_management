@@ -1,3 +1,4 @@
+<?php include('connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,8 +43,29 @@
         
                    <div style="z-index: 100;">
   
-                    <a class="btn btn-outline-success my-2 my-sm-0" role="button" href="login.html">Login</a>
-                   </div> 
+                   <!-- <a class="btn btn-outline-success my-2 my-sm-0" role="button" href="home.php?logout='1'">
+                    <? if (isset($_SESSION['name'])): ?>
+                        Logout</p>
+
+                        <? else: ?>
+                        <p>Login</p>
+                        <? endif; ?>
+                            
+                  </a> -->
+                  <a class="btn btn-outline-success my-2 my-sm-0" role="button" href="login.php">
+                        Login</p>       
+                  </a>
+                  <a class="btn btn-outline-success my-2 my-sm-0" role="button" href="home.php?logout='1'">
+                        Logout</p>       
+                  </a>
+
+                    <?php if(isset($_SESSION['name'])): ?>
+                        <button>
+                        <?php   echo $_SESSION['name']; ?>
+                    </button>
+                     <?php endif ?>
+
+                </div> 
                 </div>
               </nav>  
                 <div class="container-fluid">

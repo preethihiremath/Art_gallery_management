@@ -1,3 +1,4 @@
+<?php include('connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,17 +20,21 @@
                       
                       <div class="form-c">
                         <h1>Login</h1>
-                        <form class="form" action="" method="post" name="login">
+                        <form class="form" action="login.php" method="post">
                           <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                            </div>
                            <div class="form-group">
+                                <label for="name">Age</label>
+                                <input type="text" name="age"  class="form-control" id="age"  placeholder="Enter your age in numbers" >
+                             </div>
+                           <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
                               <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
                               <a href="#" class="link">Forgot password ?</a>
                             </div>
-                            <a class="button1 " href="#" role="button" type="submit">Login</a>
+                            <button class="button1 " name="login" type="submit">Login</button>
                             <br />
                             <div class="mt-1"><h6>Don't have an account ?<a class="link" href="register.html">  Register Now</a></h6></div>
                         </form>
