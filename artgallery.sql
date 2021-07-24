@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2021 at 01:13 PM
+-- Generation Time: Jul 24, 2021 at 04:56 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -31,17 +31,17 @@ USE `artgallery`;
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
-  `loginID` varchar(5) NOT NULL,
-  `password` varchar(10) DEFAULT NULL
+  `loginid` varchar(5) NOT NULL,
+  `passwd` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`loginID`, `password`) VALUES
-('preet', 'preethi123'),
-('rachi', 'rachita123');
+INSERT INTO `admin` (`loginid`, `passwd`) VALUES
+('preet', 'preet123'),
+('rach', 'rach123');
 
 -- --------------------------------------------------------
 
@@ -69,11 +69,11 @@ CREATE TABLE `artist` (
 DROP TABLE IF EXISTS `artwork`;
 CREATE TABLE `artwork` (
   `AWID` int(5) NOT NULL,
-  `Name` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
   `category` varchar(50) DEFAULT NULL,
   `price` double NOT NULL,
   `AID` int(5) DEFAULT NULL,
-  `loginID` varchar(5) DEFAULT NULL
+  `loginid` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -93,6 +93,15 @@ CREATE TABLE `customer` (
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`custID`, `name`, `phno`, `age`, `gender`, `address`, `email`) VALUES
+(102, 'rachita', 2147483647, 21, 'Female', 'london', 'something@gmail.com'),
+(103, 'Preethi', 1234567890, 21, 'Female', 'london', 'something2@gmail.com'),
+(104, 'Rakshitha', 123456789, 21, 'Female', 'paris', 'rakshitha3@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -104,6 +113,15 @@ CREATE TABLE `customer_login` (
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer_login`
+--
+
+INSERT INTO `customer_login` (`email`, `password`) VALUES
+('something@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759'),
+('something2@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759'),
+('rakshitha3@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759');
 
 -- --------------------------------------------------------
 
@@ -139,7 +157,7 @@ CREATE TABLE `order_names` (
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`loginID`);
+  ADD PRIMARY KEY (`loginid`);
 
 --
 -- Indexes for table `artist`
@@ -154,7 +172,7 @@ ALTER TABLE `artist`
 ALTER TABLE `artwork`
   ADD PRIMARY KEY (`AWID`),
   ADD KEY `AID` (`AID`),
-  ADD KEY `loginID` (`loginID`);
+  ADD KEY `loginid` (`loginid`);
 
 --
 -- Indexes for table `customer`
@@ -184,6 +202,34 @@ ALTER TABLE `order_names`
   ADD KEY `AWID` (`AWID`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `artist`
+--
+ALTER TABLE `artist`
+  MODIFY `AID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
+
+--
+-- AUTO_INCREMENT for table `artwork`
+--
+ALTER TABLE `artwork`
+  MODIFY `AWID` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `custID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `OID` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -192,13 +238,13 @@ ALTER TABLE `order_names`
 --
 ALTER TABLE `artwork`
   ADD CONSTRAINT `artwork_ibfk_1` FOREIGN KEY (`AID`) REFERENCES `artist` (`AID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `artwork_ibfk_2` FOREIGN KEY (`loginID`) REFERENCES `admin` (`loginID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `artwork_ibfk_2` FOREIGN KEY (`loginid`) REFERENCES `admin` (`loginid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `customer_login`
 --
 ALTER TABLE `customer_login`
-  ADD CONSTRAINT `customer_login_ibfk_1` FOREIGN KEY (`email`) REFERENCES `customer` (`email`);
+  ADD CONSTRAINT `customer_login_ibfk_1` FOREIGN KEY (`email`) REFERENCES `customer` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `orders`
