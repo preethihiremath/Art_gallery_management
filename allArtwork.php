@@ -1,3 +1,11 @@
+<?php
+include('conn.php');
+$category = $_GET["cat"];
+$sql = $conn->prepare("SELECT * FROM artwork where category=?");
+$sql->bind_param("s", $category);
+$sql->execute();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,36 +54,42 @@
           </nav>  
   </header>
   <section>
-      <h1 class="pt-5" style="padding-left: 150px;">Mythology</h1>
-      <hr />
-    <div class="grid-container">
-        <a href="art.html">
 
-       <div class="grid-item item1">
-             <img class="image" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-             <h4 class="name">one</h4>
-        </div>  </a>
-        <div class="grid-item item2">
-            <img class="image" src="https://images.unsplash.com/photo-1549289524-06cf8837ace5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGFpbnRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-            <h4 class="name">two</h4>
-       </div>
-       <div class="grid-item item3">
-        <img class="image" src="https://images.unsplash.com/photo-1583119912267-cc97c911e416?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGFpbnRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-        <h4 class="name">three</h4>
-       </div>
-       <div class="grid-item item4">
-        <img class="image" src="https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-        <h4 class="name">four</h4>
-       </div>
-       <div class="grid-item item5">
-        <img class="image" src="https://images.unsplash.com/flagged/photo-1567934150921-7632371abb32?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-        <h4 class="name">four</h4>
-       </div>
-        <div class="grid-item item6">
-            <img class="image" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-            <h4 class="name">four</h4>
-        </div>
-       </div>
+      <h1 class="pt-5" style="padding-left: 150px;"><?php echo $category ?></h1>
+      <hr />
+   
+    <div class="grid-container">
+     <?php if($result = $sql->get_result()){
+       $x=mysqli_num_rows($result);
+  
+         if(mysqli_num_rows($result) > 0){
+          for ($i =0 ; $i <= $x; $i++) {
+        while($row = mysqli_fetch_array($result) ){
+          
+           $i++;
+            echo  '<div class="grid-item item'.$i.' ">';
+            echo   '<img class="image" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="artist1"/>';
+            echo  '      <div class="overlay">';
+            echo '<a class="name" href="art.php?id='. $row['AWID']. '">' . $row['name']. '</a>'; 
+            echo "</div>";
+            echo "</div>";
+
+          }
+         
+            
+        }
+        
+    mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute" ;
+}
+ ?>
+       
+</div>
   </section>
+  <?php include('chunks/footer.php'); ?>  
 </body>
 </html>

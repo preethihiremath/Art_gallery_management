@@ -1,0 +1,22 @@
+nav{
+    margin-left: 70px;
+}
+.navbar-brand{
+    color:#c4c4c4;
+}
+.navbar-nav {
+    margin-left: 60px;
+}
+
+.nav-item{
+    padding: 10px;  
+}
+ .nav-link{
+    color: white;
+}
+.nav-link:hover{
+    color:#c4c4c4;
+}
+.active a{
+    color:#E7B554;
+}

@@ -25,10 +25,7 @@
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                            </div>
-                           <div class="form-group">
-                                <label for="name">Age</label>
-                                <input type="text" name="age"  class="form-control" id="age"  placeholder="Enter your age in numbers" >
-                             </div>
+                           
                            <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
                               <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
