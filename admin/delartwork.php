@@ -1,15 +1,12 @@
 <?php
 $conn = mysqli_connect('localhost','root','','artgallery');
 $name=$_POST['name'];
-$cat=$_POST['category'];
-$price=$_POST['price'];
-$AID=$_POST['AID'];
-$ld=$_POST['loginid'];
-$sql2="SELECT * FROM artist WHERE AID ='$AID'";
+$AWID=$_POST['AWID'];
+$sql2="SELECT * FROM artwork WHERE AWID ='$AWID'";
 $query=mysqli_query($conn,$sql2);
 $rows=mysqli_num_rows($query);
 if($rows == 1){
-    $sql="INSERT INTO artwork values(NULL,'$name','$cat','$price','$AID','$ld')";
+    $sql="DELETE FROM artwork WHERE AWID='$AWID'";
     mysqli_query($conn,$sql);
     header("location:admin-home.html");
 }

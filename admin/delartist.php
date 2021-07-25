@@ -1,20 +1,17 @@
 <?php
 $conn = mysqli_connect('localhost','root','','artgallery');
-$name=$_POST['name'];
-$cat=$_POST['category'];
-$price=$_POST['price'];
+$em=$_POST['email'];
 $AID=$_POST['AID'];
-$ld=$_POST['loginid'];
 $sql2="SELECT * FROM artist WHERE AID ='$AID'";
 $query=mysqli_query($conn,$sql2);
 $rows=mysqli_num_rows($query);
 if($rows == 1){
-    $sql="INSERT INTO artwork values(NULL,'$name','$cat','$price','$AID','$ld')";
+    $sql="DELETE FROM artist WHERE AID='$AID'";
     mysqli_query($conn,$sql);
     header("location:admin-home.html");
 }
 else{
-    header("location:add-artwork.html");
+    header("location:add-artist.html");
 }
 mysqli_close($conn);
 ?>
