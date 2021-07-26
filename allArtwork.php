@@ -30,13 +30,13 @@ $sql->execute();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="home.html">Home</a>
+                  <a class="nav-link" href="home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="collection.html">ArtWork</a>
+                  <a class="nav-link" href="collection.php">ArtWork</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="allArtists.html">Artists</a>
+                    <a class="nav-link" href="allArtists.php">Artists</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
@@ -53,6 +53,7 @@ $sql->execute();
             </div>
           </nav>  
   </header>
+
   <section>
 
       <h1 class="pt-5" style="padding-left: 150px;"><?php echo $category ?></h1>
@@ -68,7 +69,7 @@ $sql->execute();
           
            $i++;
             echo  '<div class="grid-item item'.$i.' ">';
-            echo   '<img class="image" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="artist1"/>';
+            echo   '<img class="image" src="'. $row['imgsrc']. '" alt="artist1"/>';
             echo  '      <div class="overlay">';
             echo '<a class="name" href="art.php?id='. $row['AWID']. '">' . $row['name']. '</a>'; 
             echo "</div>";

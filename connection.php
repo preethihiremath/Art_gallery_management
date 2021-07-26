@@ -6,11 +6,6 @@ $errors=array();
 $orders=array();
 $conn = mysqli_connect('localhost','root','','artgallery');
 
-function validate_mobile($mobile)
-{
-    return preg_match('/^[6-9]\d{9}$/', $mobile);
-}
-
     if(isset($_POST['register'])){
         $name=$_POST['name'];
         $phno=$_POST['phno'];
@@ -23,8 +18,7 @@ function validate_mobile($mobile)
 
         $regex_email = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
         $regex_name = '/^[(A-Z)?(a-z)?(0-9)?\s*]+$/';
-        
-        $regex_ph= '/^[0-9]+$/';
+        $regex_ph= "/^[0-9]*$/";
         
         if(empty($name)){
             array_push($errors,"Username cannot be empty");
@@ -38,7 +32,6 @@ function validate_mobile($mobile)
 
         if(mysqli_num_rows($res)==1){
             array_push($errors,"Email Already exist.");
-            header("location: login.php");
         }
         if(empty($age)){
             array_push($errors,"Age cannot be empty");
@@ -47,7 +40,7 @@ function validate_mobile($mobile)
             array_push($errors,"Username is empty");
         }
         if (!preg_match($regex_email, $email) || !preg_match($regex_ph, $phno)) {
-            array_push($errors,"Invalid phone number or email");
+            array_push($errors,"Invalid phone number");
         }
 
         if($password != $confirm_password){
@@ -71,15 +64,12 @@ function validate_mobile($mobile)
     if (isset($_POST['login'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
-
         if(empty($email)){
             array_push($errors,"Email cannot be empty");
         }
         if(empty($password)){
             array_push($errors,"Password cannot be empty");
         }
-
-        
         if(count($errors)== 0){
             $password =md5($password);
             $query="SELECT * from customer_login where email='$email' AND passwd='$password'";
@@ -89,18 +79,19 @@ function validate_mobile($mobile)
             $rows=mysqli_num_rows($result);
             $rows2=mysqli_num_rows($result2);
             if($rows==1){
+               
                 if($rows2==1)
                 {
-                $_SESSION['name'] = $rows2["name"];
-                $_SESSION['email']= $email;
-                header("location: home.php");
+                    $row = mysqli_fetch_array($result2);
+                    $_SESSION['name'] = $row['name'];
+                    $_SESSION['email']= $email;
+                    header("location: home.php");
                 }
             }
             else {
             array_push($errors,"Username does not exit or password doesn't match");
             header("location: login.php");
             }
-
         }
     }
 ?>

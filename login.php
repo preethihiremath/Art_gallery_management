@@ -21,6 +21,7 @@
                       <div class="form-c">
                         <h1>Login</h1>
                         <form class="form" action="login.php" method="post">
+                        <?php include('errors.php'); ?>  
                           <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">

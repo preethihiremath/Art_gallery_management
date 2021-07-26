@@ -1,8 +1,8 @@
 <?php 
-if(count($orders) >0): ?>
-<div class="orr">
+if(count($errors) >0): ?>
+<div >
     <?php foreach ($errors as $error): ?>
-        <p><?php echo $error; ?></p>
+        <p class="errors"><?php echo $error; ?></p>
     <?php endforeach ?>
 </div?
 <?php endif ?>

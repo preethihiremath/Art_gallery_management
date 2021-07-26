@@ -1,11 +1,15 @@
 nav{
-    margin-left: 70px;
+    margin-left: 20px;
 }
 .navbar-brand{
     color:#c4c4c4;
+    font-family: 'Dancing Script', cursive;
+}
+.navbar-brand:hover{
+    color: #E7B554 !important;
 }
 .navbar-nav {
-    margin-left: 60px;
+    margin-left: 20px;
 }
 
 .nav-item{

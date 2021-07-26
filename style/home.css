@@ -4,28 +4,6 @@ body {
     overflow: hidden;
 }
 
-nav{
-    margin-left: 70px;
-}
-.navbar-brand{
-    color:#c4c4c4;
-}
-.navbar-nav {
-    margin-left: 60px;
-}
-
-.nav-item{
-    padding: 10px;  
-}
- .nav-link{
-    color: white;
-}
-.nav-link:hover{
-    color:#c4c4c4;
-}
-.active a{
-    color:#E7B554;
-}
 .mainDiv{
     margin:0;
     padding:0;
@@ -231,7 +209,12 @@ section{
   
   .item2 {
     grid-column: 2;
-    grid-row: 2 ;
+    grid-row: 1 ;
+  }
+  
+  .item4 {
+    grid-column: 1;
+    grid-row: 2 /span 2;
   }
   .image {
     display: block;
@@ -253,7 +236,7 @@ section{
     transition: all 0.5s;
   }
  
-  
+
   .text {
     color: white;
     position: absolute;

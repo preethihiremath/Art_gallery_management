@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/navbar.css" > 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Name of the website</title>
 </head>
@@ -14,7 +17,7 @@
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="#">
                     <img src="./img/feather.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                        Name
+                    <strong>Artisance</strong> 
                   </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"><img src=""/></span>
@@ -39,14 +42,14 @@
                     </li>
                   </ul>
         
-                   <div style="z-index: 100;">
+                   <div style="z-index: 100;position:relative;left:-25px;">
                    <?php
                    if (isset($_SESSION['email'])) {
-                    echo '<a href="" class="btn btn-outline-sucesss">Hi, '.$_SESSION['email'].'</a>
-                     <a href="logout.php" class="btn btn-outline-sucesss">Logout</a>';
+                    echo '<a href="profile.php" class="btn btn-warning">Hi, '.$_SESSION['name'].'</a>
+                     <a href="logout.php" class="btn btn-danger">Logout</a>';
                     } else {
-                    echo '<a href="login.php" class="btn btn-outline-sucesss" data-target="modal1">Login</a>
-                    <a href="register.php" class="btn btn-outline-sucesss" data-target="modal2">Register</a>';
+                    echo '<a href="login.php" class="btn btn-success" data-target="modal1">Login</a>
+                    <a href="register.php" class="btn btn-success" data-target="modal2">Register</a>';
                     }?>
                 </div> 
                 </div>

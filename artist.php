@@ -1,10 +1,14 @@
 <?php include('conn.php');
 $id = $_GET["id"];
-$stmt =$conn->prepare("SELECT * FROM artwork where AID=?");
+$stmt =$conn->prepare("SELECT * FROM artist where AID=?");
 $stmt->bind_param("s", $id);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
+
+$sql2="SELECT * FROM artwork where AID='$id'";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,40 +47,42 @@ $row = $result->fetch_assoc();
                        
                     </div>
                     <div class="d-none d-md-block col-md-6">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" width="500px" height="450px" alt="artist" class=""/>
+                      <?php echo '<img src="'. $row['imgsrc']. '" width="500px" height="450px" alt="artist" class=""/>'; ?>
                     </div>
                 </div>
           </div>
         </div>
+
         <div class="tab-pane fade" id="pills-image" role="tabpanel" aria-labelledby="pills-image-tab">
-        <div class="grid-container">
-            <a href="art.html">
-    
-           <div class="grid-item item1">
-                 <img class="image" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-                 <h4 class="name">one</h4>
-            </div>  </a>
-            <div class="grid-item item2">
-                <img class="image" src="https://images.unsplash.com/photo-1549289524-06cf8837ace5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGFpbnRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-                <h4 class="name">two</h4>
-           </div>
-           <div class="grid-item item3">
-            <img class="image" src="https://images.unsplash.com/photo-1583119912267-cc97c911e416?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGFpbnRpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-            <h4 class="name">three</h4>
-           </div>
-           <div class="grid-item item4">
-            <img class="image" src="https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-            <h4 class="name">four</h4>
-           </div>
-           <div class="grid-item item5">
-            <img class="image" src="https://images.unsplash.com/flagged/photo-1567934150921-7632371abb32?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-            <h4 class="name">four</h4>
-           </div>
-            <div class="grid-item item6">
-                <img class="image" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="artist1"/>
-                <h4 class="name">four</h4>
-            </div>
-           </div>
+          <div class="grid-container">
+          <?php if($result1 = mysqli_query($conn, $sql2)){
+       $x=mysqli_num_rows($result1);
+         if(mysqli_num_rows($result1) > 0){
+          for ($i =0 ; $i <= $x; $i++) {
+        while($row = mysqli_fetch_array($result1) ){
+          
+           $i++;
+            echo  '<div class="grid-item item'.$i.' ">';
+            echo   '<img class="image" src="'. $row['imgsrc']. '" alt="'. $row['name']. '"/>';
+            echo  '      <div class="overlay">';
+            echo '<a class="text" href="art.php?id='. $row['AWID']. '">' . $row['name']. '</a>'; 
+            echo "</div>";
+            echo "</div>";
+
+          }
+         
+            
+        }
+        
+          mysqli_free_result($result);
+          } else{
+              echo "No records matching your query were found.";
+          }
+      } else{
+          echo "ERROR: Could not able to execute" ;
+      }
+      ?>
+      
            </div>
         </div>
   </section>

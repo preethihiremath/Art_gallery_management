@@ -46,8 +46,12 @@ height: 300px;
 }
 .name{
     color:#E7B554;
-    font-size: 14px;
+    font-size: 24px;
     text-decoration: none;
+}
+ .name :hover{
+  text-decoration: none;
+  color: white;
 }
 .title{
   margin: .3em 0 0;

@@ -7,13 +7,11 @@ $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 
-$sql="SELECT  name FROM artist
+$sql2="SELECT * FROM artist
 LEFT JOIN artwork
-ON AID = artwork.AID";
-
-$query = mysqli_query($conn,"SELECT  name FROM artist
-LEFT JOIN artwork
-ON AID = artwork.AID");
+ON AID = '$id'.AID";
+ $query2=mysqli_query($conn,$sql2);
+ //$row1=$query2->fetch_assoc();
 //$r = mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
@@ -35,19 +33,17 @@ ON AID = artwork.AID");
           <div class="row">
 
               <div class="col-12 col-md-6">
-                <img src="https://images.unsplash.com/photo-1586537049236-b212dc756931?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
-                        alt="" 
-                        class="w-100 h-100"
-                />
+               
+                <?php  echo '<img class="image" src="'. $row['imgsrc']. '" alt="'. $row['name']. '  class="w-100 h-100""/>'; ?>
               </div>
 
               <div class="col-12 col-md-6 p-5">
                 <h2><?php echo $row['name'] ?></h2>
-               <h1 style="color: white;">&#8377;99</h1>
-               <a  class="link" href="#"><h5>Artist name</h5></a>
+               <h1 style="color: white;">&#8377;<?php echo $row['price'] ?></h1>
+               <a  class="link" href="#"><h5><?php echo $row['name'] ?></h5></a>
                <p><?php echo $row['description'] ?>
            </p>
-          <a class="btn button" role="button" href="order.php?AWID=<?php echo $row['AWID'] ?>">Add to cart</a>
+          <a class="btn button" role="button" href="order.php?AWID=<?php echo $row['AWID'] ?>">Buy Now</a>
                
               </div>
 

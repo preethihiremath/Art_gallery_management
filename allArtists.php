@@ -27,8 +27,8 @@ $sql = 'SELECT * FROM artist';
           while($row = mysqli_fetch_array($result) ){
            $i++;
             echo  '<div class="grid-item item'.$i.' ">';
-            echo   '<img class="image" src="https://images.unsplash.com/photo-1621786040662-455f23dcb6ff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFtb3VzJTIwYXJ0aXN0c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="artist1"/>';
-            echo '<a class="name" href="artist.php?id='. $row['AID']. '">' . $row['name']. '</a>'; 
+            echo   '<img class="image" src="'. $row['imgsrc']. '" alt="' . $row['name']. '"/>';
+            echo '<br /><a class=" name " href="artist.php?id='. $row['AID']. '">' . $row['name']. '</a>'; 
             echo "</div>";
           }
         }

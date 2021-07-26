@@ -1,6 +1,6 @@
 <?php
 include('conn.php');
-$sql = 'SELECT category FROM artwork';
+$sql = 'SELECT distinct category FROM artwork';
 
 ?>
 <!DOCTYPE html>

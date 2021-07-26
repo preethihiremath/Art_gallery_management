@@ -50,7 +50,7 @@
             </div>
             <div class="row justify-content-center">             
                     <div class="col-auto">
-                        <p>© Preethi V Hiremath</p>
+                        <p>©artisance2021</p>
                     </div>
             </div>
             </div>

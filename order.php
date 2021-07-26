@@ -6,6 +6,13 @@ $sql="SELECT * FROM artwork where AWID='$AWID'";
 $query=mysqli_query($conn,$sql);
 $rows=mysqli_num_rows($query);
 $email=$_SESSION['email'];
+
+if (!isset($_SESSION['name']) || !isset($_SESSION['email'])) {
+	$_SESSION['msg'] = "You must Log In First to Order!";
+    array_push($errors,"Password cannot be empty");
+	header('location: login.php');
+}
+
 if($rows>0)
 {
     $sql2="SELECT * FROM customer where email='$email'";
@@ -24,11 +31,11 @@ if($rows>0)
 
     }
     else{
-        header("location:art.php");
+        header('location: login.php');
     }
 }
 else
 {
-    header("location:art.php");
+    header('location: login.php');
 }    
 ?>

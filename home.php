@@ -15,12 +15,11 @@
         <section>
             
 	<?php require('chunks/navbar.php'); ?>
-	
                 <div class="container-fluid">
                     <div class="row">
                         <div class="container col-12 col-sm-6 ">
                             <div class=" container intro ml-5">
-                                <h1>Arteiste is the one place quench your thirst for genius and beauty</h1>
+                                <h1><strong>Artisance</strong>  is the one place quench your thirst for genius and beauty</h1>
                                 <svg width="100" height="3">
                                     <rect width="100" height="3" rx="3" ry="3" style="fill:#E7B554;opacity:0.7" />
                                   </svg>
@@ -47,7 +46,6 @@
                 <input type="radio" name="position" />
                 <input type="radio" name="position" />
          
-            
             <main id="carousel">
                 <div class="item"></div>
                 <div class="item"></div>
@@ -74,27 +72,36 @@
           <div class=" container row">
                 <div class="col-12 col-sm-4">
                     <div class="intro ml-5 pl-5">
-                        <h1>Catergories</h1>
+                        <h1>Categories</h1>
                         <svg width="100" height="3">
                             <rect width="100" height="3" rx="3" ry="3" style="fill:#E7B554;opacity:0.7" />
                         </svg>
                         <h6>
-                            Explore magnificent stuff based on catergory of myth and all your choices bitchhh
+                            Explore magnificent art based on catergory of myth and all your choices 
                         </h6>
-                        <a class="button1 " href="#" role="button"><span>Explore</span></a>
+                        <a class="button1 " href="collection.php" role="button"><span>Explore</span></a>
                     </div>
                 </div>
                 <div class="container col-12 col-sm-6">
                         <div class="grid-container">
-                            <div class="grid-item item1">   <img src="https://images.unsplash.com/photo-1576773689115-5cd2b0223523?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bXl0aG9sb2d5JTIwYXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="catergory"/> 
-                            </div>
-                            <div class="grid-item item2"><div class="overlay">
+                            <div class="grid-item item1">  
+                                 <img src="https://images.unsplash.com/photo-1576773689115-5cd2b0223523?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bXl0aG9sb2d5JTIwYXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="catergory"/> </div>
+                       
+                            <div class="grid-item item2">
+                              <div class="overlay">
                                 <h1 class="text">+4</h1>
-                              </div><img src=https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="catergory"/></div>
-                            <div class="grid-item item3">   <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="catergory"/></div>
-                            <div class="grid-item item4">   <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="catergory"/></div>
+                              </div>
+                              <img src=https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="catergory"/>
+                            </div>
+
+                        
+                            <div class="grid-item item4">  
+                                 <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="catergory"/>
+                            </div>
+                           
                         </div>
                  </div>
+            </div>
         </section>
         
         
