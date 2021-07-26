@@ -1,7 +1,6 @@
 <?php 
-echo 'roor';
-if(count($errors) >0): ?>
-<div class="errors">
+if(count($orders) >0): ?>
+<div class="orr">
     <?php foreach ($errors as $error): ?>
         <p><?php echo $error; ?></p>
     <?php endforeach ?>

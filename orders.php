@@ -86,3 +86,15 @@ $row = $result->fetch_row();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php
+
+if (isset($_SESSION['email'])) {
+    echo '<li><a href="#" class="btn btn-outline-sucesss">Hi, '.$_SESSION['email'].'</a></li>
+    <li><a href="logout.php" class="btn btn-outline-sucesss">Logout</a></li>';
+} else {
+    echo '<li><a href="#" class="btn btn-outline-sucesss" data-target="modal1">Login</a></li>
+    <li><a href="#" class="btn btn-outline-sucesss" data-target="modal2">Register</a></li>';
+}
+
+?>
