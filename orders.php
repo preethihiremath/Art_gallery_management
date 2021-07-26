@@ -1,13 +1,3 @@
-<?php
-include('conn.php');
-$id = $_GET["AWID"];
-$stmt =$conn->prepare("SELECT * FROM artwork where AWID=?");
-$stmt->bind_param("s", $id);
-$stmt->execute();
-$result = $stmt->get_result();
-$row = $result->fetch_row();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,54 +19,24 @@ $row = $result->fetch_row();
 
   <div class="container main-section">
     <div class="row">
+        <?php include('conn.php');
+        $email=$_SESSION['email'];
+        $sql2="SELECT * FROM customer where email='$email'";
+        $query2=mysqli_query($conn,$sql2);
+        $row2=$query2->fetch_assoc();
+        $cid=$row2['custID'];
+        $sql4="SELECT * FROM orders where custID='$cid'";
+        $query4=mysqli_query($conn,$sql4);
+        if($query4->num_rows>0)
+        { 
+        while($row4 = $query4->fetch_assoc())
+        {
+            //echo $row4["OID"];
+            array_push($orders,$row4["OID"]);
+        }
+    } ?>
     <div class="col-lg-12 pb-2">
-        <h3 class="myorders">My orders</h3>
-    </div>
-    <div class="col-lg-12 pl-3 pt-3">
-        <table class="table table-hover border bg-white">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th style="width:10%;">Quantity</th>
-                    <th>Subtotal</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-
-        <tbody>
-        <tr>
-        <td>
-            <div class="row">
-                <div class="col-lg-2 Product-img">
-                <img src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" class="img-responsive"/>
-                </div>
-                <div class="col-lg-10">
-                       <h4 class="nomargin"><?php echo $row['name']; ?></h4>
-                </div>
-            </div>
-        </td>
-
-        <td> <?php echo $row['price']; ?> </td>
-
-        <td data-th="Quantity">
-             <input type="number" class="form-control text-center" value="1">
-        </td>
-        <td><?php echo $row['price']; ?></td>
-        
-        <td class="actions" data-th="" style="width:10%;">
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-        </td>
-        <tfoot>
-            </tr>
-                <td><a href="collection.php" class="btn btn-warning text-white"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                <td colspan="1" class="hidden-xs"></td>
-                <td class="hidden-xs text-center" style="width:10%;"><strong>Total </strong></td>
-                <td class="hidden-xs text-center" class="total amount" style="width:10%;"><strong><?php echo $row['price']; ?></strong></td>
-                <td> <?php echo '<a class="btn button" role="button" href="add-orders.php?id='. $row['AWID']. '">Add to cart</a>'; ?> </td>
-            </tr>
-        </tfoot>
-        </table>
+        <h3 class="myorders">My orders<?php include('orders1.php');?></h3>
     </div>
     </div>
     </div>

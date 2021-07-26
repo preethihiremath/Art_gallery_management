@@ -3,6 +3,7 @@ session_start();
 $name="";
 $email="";
 $errors=array();
+$orders=array();
 $conn = mysqli_connect('localhost','root','','artgallery');
 
 function validate_mobile($mobile)
@@ -81,21 +82,25 @@ function validate_mobile($mobile)
         
         if(count($errors)== 0){
             $password =md5($password);
-            $query="SELECT * from customer_login where email='$email' AND password='$password'";
+            $query="SELECT * from customer_login where email='$email' AND passwd='$password'";
+            $query2="SELECT custID,name FROM customer where email='$email'";
             $result = mysqli_query($conn,$query);
-            if(mysqli_num_rows($result)==1){
-                $_SESSION['name'] = $name;
+            $result2=mysqli_query($conn,$query2);
+            $rows=mysqli_num_rows($result);
+            $rows2=mysqli_num_rows($result2);
+            if($rows==1){
+                if($rows2==1)
+                {
+                $_SESSION['name'] = $rows2["name"];
+                $_SESSION['email']= $email;
                 header("location: home.php");
+                }
             }
             else {
             array_push($errors,"Username does not exit or password doesn't match");
             header("location: login.php");
             }
+
         }
-    }
-    if (isset($_GET['logout'])){
-        session_destroy();
-        unset($_SESSION['name']);
-        header('location: home.php');
     }
 ?>

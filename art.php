@@ -47,7 +47,7 @@ ON AID = artwork.AID");
                <a  class="link" href="#"><h5>Artist name</h5></a>
                <p><?php echo $row['description'] ?>
            </p>
-          <?php echo '<a class="btn button" role="button" href="orders.php?id='. $row['AWID']. '">Add to cart</a>'; ?> 
+          <a class="btn button" role="button" href="order.php?AWID=<?php echo $row['AWID'] ?>">Add to cart</a>
                
               </div>
 

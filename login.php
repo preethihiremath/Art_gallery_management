@@ -29,7 +29,7 @@
                            <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
                               <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
-                              <a href="#" class="link">Forgot password ?</a>
+                              <a href="forgotpassword.html" class="link">Forgot password ?</a>
                             </div>
                             <button class="button1 " name="login" type="submit">Login</button>
                             <br />
