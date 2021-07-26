@@ -23,9 +23,9 @@
                             BMS College of Engineering<br>
                              Bangalore Jayanagar<br>
                              INDIA<br>
-                             <i class="fa fa-phone"></i>: +852 1234 5678<br>
-                             <i class="fa fa-fax"></i>: +852 8765 4321<br>
-                             <i class="fa fa-envelope"></i>:
+                             <i class="fa fa-phone"></i> : +852 1234 5678<br>
+                             <i class="fa fa-fax"></i> : +852 8765 4321<br>
+                             <i class="fa fa-envelope"></i> :
                                <a href="mailto:something">name@201293.com</a>
                           </address>
                     <form class="form-inline my-2 my-lg-0">

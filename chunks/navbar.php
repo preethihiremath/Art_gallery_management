@@ -40,24 +40,14 @@
                   </ul>
         
                    <div style="z-index: 100;">
-                    <a class="btn btn-outline-success my-2 my-sm-0" role="button" href="login.php">
-                         Login   
-                    </a>
-                    <a class="btn btn-outline-success my-2 my-sm-0" role="button" href="home.php?logout='1'">
-                    <?php if(isset($_SESSION['name'])): ?>
-                       <h3>
-                        <?php   echo $_SESSION['name']; ?>
-                    </h3>
-                     <?php endif ?>
-                    </a>
-                    <?php 
-			if (isset($_SESSION['msg'])) {
-				echo '<div class="section" style="margin: 10px; padding: 3px 10px; margin-top: 35px; border: 2px solid black; border-radius: 5px; color: white;">
-						<p><b>'.$_SESSION['msg'].'</b></p>
-					</div>';
-
-				unset($_SESSION['msg']);
-			}?>
+                   <?php
+                   if (isset($_SESSION['email'])) {
+                    echo '<a href="" class="btn btn-outline-sucesss">Hi, '.$_SESSION['email'].'</a>
+                     <a href="logout.php" class="btn btn-outline-sucesss">Logout</a>';
+                    } else {
+                    echo '<a href="login.php" class="btn btn-outline-sucesss" data-target="modal1">Login</a>
+                    <a href="register.php" class="btn btn-outline-sucesss" data-target="modal2">Register</a>';
+                    }?>
                 </div> 
                 </div>
               </nav>  
