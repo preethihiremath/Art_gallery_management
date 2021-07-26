@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 26, 2021 at 05:43 PM
+-- Generation Time: Jul 26, 2021 at 10:43 PM
 -- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- PHP Version: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,15 +55,19 @@ CREATE TABLE `artist` (
   `gender` varchar(10) DEFAULT NULL,
   `address` varchar(30) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
-  `description` varchar(500) DEFAULT NULL
+  `description` varchar(500) DEFAULT NULL,
+  `imgsrc` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `artist`
 --
 
-INSERT INTO `artist` (`AID`, `name`, `age`, `phno`, `gender`, `address`, `email`, `description`) VALUES
-(200, 'Preethi', 21, 2147483647, 'Female', 'paris', 'something@gmail.com', 'Saks Afridi is a multi-disciplinary artist who was raised in several countries.\r\n                             Saks\'s art practice is two-fold: Collaborative and Personal. His personal work \r\n                             investigates the predicaments and perplexities of the life of an ‘Insider Outsider’. \r\n                             This is the practice of achieving a sense of belonging while being out of place, \r\n                             finding happiness in a state of temporary permanence');
+INSERT INTO `artist` (`AID`, `name`, `age`, `phno`, `gender`, `address`, `email`, `description`, `imgsrc`) VALUES
+(204, 'Aleksandra', 25, 2147483647, 'Female', 'paris', 'alexandra@gmail.com', 'Aleksandra Savina Rozenvain was born in Kiev, Ukraine. Aleksandra would go on to obtain her fine art diploma in Kiev from the Fine Art School and Teachers College. From there, she worked in her field as a teacher and designer. She has traveled the world extensively with her husband, fellow artist Michael Rozenvain', 'https://images.unsplash.com/photo-1486413869840-a99ac0a4c031?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGFydGlzdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+(205, 'Camille', 25, 845309287, 'Female', 'paris', 'camille@gmail.com', 'Camille Pissaro was born July 10, 1830 on the beautiful island of Saint Thomas. As a young man Pissaro relocated to Paris when his parents sent him to boarding school. In the vibrant city, Pissaro began his appreciation and practice of art. Although he would return to Saint Thomas after his education was completed, his affinity for art continued and he utilized all of his spare time to continue drawing and painting.', 'https://images.unsplash.com/photo-1611244419377-b0a760c19719?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YXJ0aXN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+(206, 'David', 56, 745309287, 'Male', 'London', 'david@gmail.com', 'David V. Gonzales was born on February 3, 1971, on a U.S. Air Force Base in Wiesbaden, Germany. He grew up in Santa Fe, N.M. enjoying the benefits of belonging to a large and closely-knit extended family. His family has been well rooted in the area for 5 generations, which include many well-known artists,', 'https://images.unsplash.com/photo-1529066792305-5e4efa40fde9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0aXN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+(207, 'Rahid', 29, 845309287, 'Male', 'India', 'rahid@gmail.com', 'Camille Pissaro was born July 10, 1830 on the beautiful island of Saint Thomas. As a young man Pissaro relocated to Paris when his parents sent him to boarding school. In the vibrant city, Pissaro began his appreciation and practice of art. Although he would return to Saint Thomas after his education was completed, his affinity for art continued and he utilized all of his spare time to continue drawing and painting.', 'https://images.unsplash.com/photo-1568438397894-72318e6f8674?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGFydGlzdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
 
 -- --------------------------------------------------------
 
@@ -78,15 +82,25 @@ CREATE TABLE `artwork` (
   `description` varchar(300) DEFAULT NULL,
   `price` double NOT NULL,
   `AID` int(5) DEFAULT NULL,
-  `loginid` varchar(5) DEFAULT NULL
+  `loginid` varchar(5) DEFAULT NULL,
+  `imgsrc` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `artwork`
 --
 
-INSERT INTO `artwork` (`AWID`, `name`, `category`, `description`, `price`, `AID`, `loginid`) VALUES
-(1234, 'Blai', 'Mythology', 'Saks Afridi is a multi-disciplinary artist who was raised in several countries. Saks\'s art practice is two-fold: Collaborative and Personal. His personal work investigates the predicaments and perplexities of the life of an ‘Insider Outsider’. This is the practice of achieving a sense of belonging w', 12, 200, 'preet');
+INSERT INTO `artwork` (`AWID`, `name`, `category`, `description`, `price`, `AID`, `loginid`, `imgsrc`) VALUES
+(1242, 'Abstract 1', 'Abstract', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 204, 'preet', 'https://fidelitusgallery.com/wp-content/uploads/2021/06/WhatsApp-Image-2021-06-01-at-5.55.44-PM-300x300.jpeg'),
+(1243, 'Abstract 2', 'Abstract', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 204, 'preet', 'https://fidelitusgallery.com/wp-content/uploads/2021/06/WhatsApp-Image-2021-06-01-at-5.55.43-PM-1-300x300.jpeg'),
+(1244, 'Abstract 3', 'Abstract', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 34000, 204, 'preet', 'https://fidelitusgallery.com/wp-content/uploads/2021/06/WhatsApp-Image-2021-06-01-at-5.55.43-PM-300x300.jpeg'),
+(1245, 'Dhundi', 'Mythology', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 205, 'rach', 'https://fidelitusgallery.com/wp-content/uploads/2019/03/Dundi-8-36-x-48-300x300.jpg'),
+(1246, 'Dharani Mandal', 'Mythology', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 205, 'rach', 'https://fidelitusgallery.com/wp-content/uploads/2021/05/Dharanimandala-48x36.-77K-300x300.jpg'),
+(1247, 'Geetha Pradesha', 'Mythology', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 205, 'rach', 'https://fidelitusgallery.com/wp-content/uploads/2021/05/Geethopadesha-30x24.-25K-1-300x300.jpg'),
+(1248, 'Nailed Women', 'Figurative', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 206, 'pruth', 'https://fidelitusgallery.com/wp-content/uploads/2019/01/nailed-women-48-x-60-300x300.jpg'),
+(1249, 'Time Travel', 'Figurative', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45000, 206, 'pruth', 'https://fidelitusgallery.com/wp-content/uploads/2021/05/Time-Travel-72x60-1-300x300.jpg'),
+(1250, 'Birds', 'Figurative', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45000, 206, 'pruth', 'https://fidelitusgallery.com/wp-content/uploads/2018/12/Birds-1-300x300.jpg'),
+(1251, 'Flower Vase', 'Modern Art', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 204, 'preet', 'https://fidelitusgallery.com/wp-content/uploads/2021/05/Flower-waz-36x30.-40K-300x300.jpg');
 
 -- --------------------------------------------------------
 
@@ -109,9 +123,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`custID`, `name`, `phno`, `age`, `gender`, `address`, `email`) VALUES
-(102, 'rachita', 2147483647, 21, 'Female', 'london', 'something@gmail.com'),
-(103, 'Preethi', 1234567890, 21, 'Female', 'london', 'something2@gmail.com'),
-(104, 'Rakshitha', 123456789, 21, 'Female', 'paris', 'rakshitha3@gmail.com');
+(107, 'Harry', 2147483647, 19, 'Female', 'Tatarus', 'harry@gmail.com'),
+(108, 'Rhea', 2147483647, 18, 'Female', 'Paris', 'rhea@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -129,10 +142,8 @@ CREATE TABLE `customer_login` (
 --
 
 INSERT INTO `customer_login` (`email`, `passwd`) VALUES
-('something@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
-('something2@gmail.com', '25d55ad283aa400af464c76d713c07ad'),
-('rakshitha3@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759'),
-('something2@gmail.com', '25d55ad283aa400af464c76d713c07ad');
+('harry@gmail.com', 'd0d2b883ffe11676af7e678cf45a36fa'),
+('rhea@gmail.com', 'e4bf6613f1d3d731a16a1aa7f846c02c');
 
 -- --------------------------------------------------------
 
@@ -152,21 +163,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`OID`, `AWID`, `amount`, `custID`) VALUES
-(9, 1234, 150, 103),
-(16, 1234, 0, 103),
-(17, 1234, 12, 103),
-(19, 1234, 12, 103),
-(20, 1234, 12, 103),
-(21, 1234, 12, 102),
-(22, 1234, 12, 102),
-(23, 1234, 12, 102),
-(24, 1234, 12, 102),
-(25, 1234, 12, 102),
-(26, 1234, 12, 102),
-(27, 1234, 12, 102),
-(28, 1234, 12, 102),
-(29, 1234, 12, 102),
-(30, 1234, 12, 103);
+(37, 1249, 45000, 108),
+(38, 1246, 45, 108),
+(39, 1242, 45, 108);
 
 --
 -- Indexes for dumped tables
@@ -222,25 +221,25 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `artist`
 --
 ALTER TABLE `artist`
-  MODIFY `AID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=204;
+  MODIFY `AID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
 
 --
 -- AUTO_INCREMENT for table `artwork`
 --
 ALTER TABLE `artwork`
-  MODIFY `AWID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1239;
+  MODIFY `AWID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1252;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `custID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `custID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `OID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Constraints for dumped tables

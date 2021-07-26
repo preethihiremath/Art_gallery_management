@@ -52,7 +52,7 @@
             </thead>
 
        
-             <?php include('orders1.php'); ?>
+             <?php include('ordersandname.php'); ?>
     
             <tfoot>
                 <td><a href="collection.php" class="btn btn-warning text-white"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
