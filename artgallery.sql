@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 26, 2021 at 10:43 PM
+-- Generation Time: Jul 27, 2021 at 03:40 AM
 -- Server version: 10.4.20-MariaDB
--- PHP Version: 7.3.29
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,7 +67,8 @@ INSERT INTO `artist` (`AID`, `name`, `age`, `phno`, `gender`, `address`, `email`
 (204, 'Aleksandra', 25, 2147483647, 'Female', 'paris', 'alexandra@gmail.com', 'Aleksandra Savina Rozenvain was born in Kiev, Ukraine. Aleksandra would go on to obtain her fine art diploma in Kiev from the Fine Art School and Teachers College. From there, she worked in her field as a teacher and designer. She has traveled the world extensively with her husband, fellow artist Michael Rozenvain', 'https://images.unsplash.com/photo-1486413869840-a99ac0a4c031?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGFydGlzdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
 (205, 'Camille', 25, 845309287, 'Female', 'paris', 'camille@gmail.com', 'Camille Pissaro was born July 10, 1830 on the beautiful island of Saint Thomas. As a young man Pissaro relocated to Paris when his parents sent him to boarding school. In the vibrant city, Pissaro began his appreciation and practice of art. Although he would return to Saint Thomas after his education was completed, his affinity for art continued and he utilized all of his spare time to continue drawing and painting.', 'https://images.unsplash.com/photo-1611244419377-b0a760c19719?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YXJ0aXN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
 (206, 'David', 56, 745309287, 'Male', 'London', 'david@gmail.com', 'David V. Gonzales was born on February 3, 1971, on a U.S. Air Force Base in Wiesbaden, Germany. He grew up in Santa Fe, N.M. enjoying the benefits of belonging to a large and closely-knit extended family. His family has been well rooted in the area for 5 generations, which include many well-known artists,', 'https://images.unsplash.com/photo-1529066792305-5e4efa40fde9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0aXN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-(207, 'Rahid', 29, 845309287, 'Male', 'India', 'rahid@gmail.com', 'Camille Pissaro was born July 10, 1830 on the beautiful island of Saint Thomas. As a young man Pissaro relocated to Paris when his parents sent him to boarding school. In the vibrant city, Pissaro began his appreciation and practice of art. Although he would return to Saint Thomas after his education was completed, his affinity for art continued and he utilized all of his spare time to continue drawing and painting.', 'https://images.unsplash.com/photo-1568438397894-72318e6f8674?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGFydGlzdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+(207, 'Rahid', 29, 845309287, 'Male', 'India', 'rahid@gmail.com', 'Camille Pissaro was born July 10, 1830 on the beautiful island of Saint Thomas. As a young man Pissaro relocated to Paris when his parents sent him to boarding school. In the vibrant city, Pissaro began his appreciation and practice of art. Although he would return to Saint Thomas after his education was completed, his affinity for art continued and he utilized all of his spare time to continue drawing and painting.', 'https://images.unsplash.com/photo-1568438397894-72318e6f8674?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGFydGlzdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+(209, 'El greco', 79, 1234567890, 'Male', 'paris', 'elgrec@gmail.com', 'Doménikos Theotokópoulos, most widely known as El Greco, was a Greek painter, sculptor and architect of the Spanish Renaissance.', 'http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTGMYm1t2qZszPrt6ZYttQOSsibR3FOCdmr8VFYhTyEpLX0eAADzjMXSVLCTx-F');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,8 @@ INSERT INTO `artwork` (`AWID`, `name`, `category`, `description`, `price`, `AID`
 (1248, 'Nailed Women', 'Figurative', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 206, 'pruth', 'https://fidelitusgallery.com/wp-content/uploads/2019/01/nailed-women-48-x-60-300x300.jpg'),
 (1249, 'Time Travel', 'Figurative', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45000, 206, 'pruth', 'https://fidelitusgallery.com/wp-content/uploads/2021/05/Time-Travel-72x60-1-300x300.jpg'),
 (1250, 'Birds', 'Figurative', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45000, 206, 'pruth', 'https://fidelitusgallery.com/wp-content/uploads/2018/12/Birds-1-300x300.jpg'),
-(1251, 'Flower Vase', 'Modern Art', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 204, 'preet', 'https://fidelitusgallery.com/wp-content/uploads/2021/05/Flower-waz-36x30.-40K-300x300.jpg');
+(1251, 'Flower Vase', 'Modern Art', 'An art gallery is a place where the world slows down. Minds wander. Beauty is everywhere. Around every corner is another epic adventure. In our four walled worlds, it happens to be more fun than most. \r\n\r\nWe began providing the world with fine art in 2007. We believe art should be fun. The art we co', 45, 204, 'preet', 'https://fidelitusgallery.com/wp-content/uploads/2021/05/Flower-waz-36x30.-40K-300x300.jpg'),
+(1254, 'View of Toledo', 'Landscape', 'In this, his greatest surviving landscape, El Greco portrays the city he lived and worked in for most of his life. The painting belongs to the tradition of emblematic city views, rather than a faithful documentary description', 200000, 209, 'rach', 'https://collectionapi.metmuseum.org/api/collection/v1/iiif/436575/1455894/main-image');
 
 -- --------------------------------------------------------
 
@@ -124,7 +126,8 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`custID`, `name`, `phno`, `age`, `gender`, `address`, `email`) VALUES
 (107, 'Harry', 2147483647, 19, 'Female', 'Tatarus', 'harry@gmail.com'),
-(108, 'Rhea', 2147483647, 18, 'Female', 'Paris', 'rhea@gmail.com');
+(108, 'Rhea', 2147483647, 18, 'Female', 'Paris', 'rhea@gmail.com'),
+(109, 'test', 2147483647, 21, 'Female', 'paris', 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -143,7 +146,8 @@ CREATE TABLE `customer_login` (
 
 INSERT INTO `customer_login` (`email`, `passwd`) VALUES
 ('harry@gmail.com', 'd0d2b883ffe11676af7e678cf45a36fa'),
-('rhea@gmail.com', 'e4bf6613f1d3d731a16a1aa7f846c02c');
+('rhea@gmail.com', 'e4bf6613f1d3d731a16a1aa7f846c02c'),
+('test@gmail.com', 'cc03e747a6afbbcbf8be7668acfebee5');
 
 -- --------------------------------------------------------
 
@@ -165,7 +169,9 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`OID`, `AWID`, `amount`, `custID`) VALUES
 (37, 1249, 45000, 108),
 (38, 1246, 45, 108),
-(39, 1242, 45, 108);
+(39, 1242, 45, 108),
+(40, 1242, 45, 109),
+(41, 1245, 45, 109);
 
 --
 -- Indexes for dumped tables
@@ -221,25 +227,25 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `artist`
 --
 ALTER TABLE `artist`
-  MODIFY `AID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
+  MODIFY `AID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=210;
 
 --
 -- AUTO_INCREMENT for table `artwork`
 --
 ALTER TABLE `artwork`
-  MODIFY `AWID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1252;
+  MODIFY `AWID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1255;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `custID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `custID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `OID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- Constraints for dumped tables

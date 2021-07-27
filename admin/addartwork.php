@@ -5,11 +5,13 @@ $cat=$_POST['category'];
 $price=$_POST['price'];
 $AID=$_POST['AID'];
 $ld=$_POST['loginid'];
+$d=$_POST['desc'];
+$l=$_POST['ln'];
 $sql2="SELECT * FROM artist WHERE AID ='$AID'";
 $query=mysqli_query($conn,$sql2);
 $rows=mysqli_num_rows($query);
 if($rows == 1){
-    $sql="INSERT INTO artwork values(NULL,'$name','$cat','$price','$AID','$ld')";
+    $sql="INSERT INTO artwork values(NULL,'$name','$cat','$d','$price','$AID','$ld','$l')";
     mysqli_query($conn,$sql);
     header("location:admin-home.html");
 }
