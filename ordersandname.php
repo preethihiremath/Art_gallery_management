@@ -10,7 +10,7 @@
    $query2=mysqli_query($conn,$sql2);
    $row2=$query2->fetch_assoc();
 
-if(mysqli_num_rows($query2) > 0): ?>
+ ?>
 <div class="orders">
     <?php   while($row2 = mysqli_fetch_array($query2) ){ ?>
         <tr> <td><?php echo $row1['name'];?></td>
@@ -19,4 +19,3 @@ if(mysqli_num_rows($query2) > 0): ?>
      </tr>
     <?php } ?>
 </div>
-<?php endif ?>

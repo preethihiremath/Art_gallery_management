@@ -5,16 +5,14 @@ $AWID = $_GET["AWID"];
 $sql="SELECT * FROM artwork where AWID='$AWID'";
 $query=mysqli_query($conn,$sql);
 $rows=mysqli_num_rows($query);
-$email=$_SESSION['email'];
 
 if (!isset($_SESSION['name']) || !isset($_SESSION['email'])) {
-	$_SESSION['msg'] = "You must Log In First to Order!";
-    array_push($errors,"Password cannot be empty");
 	header('location: login.php');
 }
 
 if($rows>0)
 {
+    $email=$_SESSION['email'];
     $sql2="SELECT * FROM customer where email='$email'";
     $query2=mysqli_query($conn,$sql2);
     $rows2=mysqli_num_rows($query2);

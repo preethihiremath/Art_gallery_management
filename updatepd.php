@@ -1,10 +1,9 @@
 <?php
 $conn = mysqli_connect('localhost','root','','artgallery');
-$id=$_POST['id'];
 $em=$_POST['email'];
 $ps=$_POST['password'];
 $cps=$_POST['cpassword'];
-$sql="SELECT * FROM customer WHERE custID='$id' AND email='$em'";
+$sql="SELECT * FROM customer WHERE email='$em'";
 $query=mysqli_query($conn,$sql);
 $rows=mysqli_num_rows($query);
 if($rows == 1){

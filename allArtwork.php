@@ -4,7 +4,6 @@ $category = $_GET["cat"];
 $sql = $conn->prepare("SELECT * FROM artwork where category=?");
 $sql->bind_param("s", $category);
 $sql->execute();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,7 @@ $sql->execute();
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="#">
                 <img src="./img/feather.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                    Name
+                    Artisance
               </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"><img src=""/></span>
