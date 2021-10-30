@@ -1,5 +1,7 @@
 nav{
     margin-left: 20px;
+    position: fixed;
+    top: 0;
 }
 .navbar-brand{
     color:#c4c4c4;
@@ -24,3 +26,6 @@ nav{
 .active a{
     color:#E7B554;
 }
+a:hover{
+    text-decoration: none;
+  }

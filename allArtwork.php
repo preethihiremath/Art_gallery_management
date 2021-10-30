@@ -17,7 +17,7 @@ $sql->execute();
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <a class="navbar-brand" href="#">
                 <img src="./img/feather.png" width="30" height="30" class="d-inline-block align-top" alt="">
                     Artisance
@@ -46,7 +46,6 @@ $sql->execute();
               </ul>
     
                <div style="z-index: 100;">
-
                 <button class="btn btn-outline-success my-2 my-sm-0" >Login</button>
                </div> 
             </div>

@@ -16,7 +16,7 @@ $sql2="SELECT * FROM artwork where AID='$id'";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/artist.css">
+    <link rel="stylesheet" href="./style/artist.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Our Artists</title>
 </head>
@@ -24,7 +24,7 @@ $sql2="SELECT * FROM artwork where AID='$id'";
   <header>
     <?php include('chunks/navbar.php'); ?>  
   </header>
-  <section class="artist">
+  <section class="artist mt-5 pt-5">
     <ul class="nav nav-pills justify-content-end" id="pills-tab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="pills-bio-tab" data-toggle="pill" href="#pills-bio" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
@@ -38,10 +38,10 @@ $sql2="SELECT * FROM artwork where AID='$id'";
           <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-6">
-                        <h4><?php echo $row['name'] ?></h4>
+                        <h1><?php echo $row['name'] ?></h1>
                         <p>Born 1975, Peshawar, Pakistan</p>
                         <br/>
-                        <p>
+                        <p class="description">
                              <?php echo $row['description'] ?>
                         </p>
                        

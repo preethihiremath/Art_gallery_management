@@ -14,7 +14,7 @@
 </head>
 <body>
  
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg fixed-top">
                 <a class="navbar-brand" href="#">
                     <img src="./img/feather.png" width="30" height="30" class="d-inline-block align-top" alt="">
                     <strong>Artisance</strong> 
@@ -35,10 +35,10 @@
                         <a class="nav-link" href="allArtists.php">Artists</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="contact.php">Contact Us</a>
                     </li>
                   </ul>
         

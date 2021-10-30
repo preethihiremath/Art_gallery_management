@@ -1,53 +1,20 @@
-body {
-    background-color: #28272A;
-    color:white;
-    
-  }
-  
-  nav{
-    background-color: #28272A;
-    padding-left: 70px;
-  }
-  .navbar-brand{
-    padding-left: 70px;
-    color:#c4c4c4;
-  }
-  .navbar-nav {
-    margin-left: 60px;
-  }
-  
-  section{
-    margin-top: -42px;
-    background-color: #28272A;
+ section{
     color:#E7B554;
     display: flex;
     justify-content: center;
     align-items: center;
-    
   }
-  .nav-item{
-    padding: 10px;  
-  }
-  .nav-link{
-    color: white;
-  }
-  .nav-link:hover{
-    color:#c4c4c4;
-  }
-  .active a{
-    color:#E7B554;
-  }
+ 
   .grid-container {
-  margin-top: -160px;
-  margin-left: 30px;
+
       display: grid;
       grid-gap: 10px;
       grid-auto-flow: row;
       padding: 10px;
-      padding: 60px;
-      padding-left: 150px;
+      /* padding: 60px;
+      padding-left: 150px; */
     }
-    
+
   .grid-item{
       position: relative;
       width: 100%;
@@ -73,10 +40,11 @@ body {
       font-size: 14px;
   }
   .title{
-    margin: .3em 0 0;
-    position: relative;
-    right: 600px;
-    bottom: 200px;
+     /* margin: .3em 0 0; */
+     position: relative;
+    top: 450px;
+    left: 2rem;
+    margin-left: 2rem;
     color: #E7B554;
     font-size: 100px;
     text-shadow: 0 1px 0 #E7B554, 0 2px 0 #E7B554, 0 3px 0 #000, 0 4px 0 #b9b9b9, 0 12px 0 #000, 0 6px 1px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
@@ -114,4 +82,13 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+  }
+
+.overlay .text:hover{
+    text-decoration: none;
+    color: #E7B554;
+  }
+
+  a:hover{
+    text-decoration: none;
   }
